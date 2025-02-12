@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorState } from './calculator/calculator.interface';
 
 @Component({
   selector: 'app-root',

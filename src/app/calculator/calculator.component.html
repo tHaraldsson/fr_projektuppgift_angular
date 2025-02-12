@@ -3,8 +3,8 @@
   <article>
     <h3>Calculator</h3>
     <p class="display">
-      {{ value }}{{ operator }}{{ value2 }}
-      <span *ngIf="showResult">  ={{ sum }}</span>
+      {{ calculatorState.value }}{{ calculatorState.operator }}{{ calculatorState.value2 }}
+      <span *ngIf="calculatorState.showResult">  ={{ calculatorState.sum }}</span>
     </p>
     <div class="buttons">
       

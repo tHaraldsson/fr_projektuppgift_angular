@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import { CalculatorState } from './calculator.interface';
 @Component({
   selector: 'app-calculator',
   imports: [CommonModule],
@@ -15,75 +15,77 @@ export class CalculatorComponent {
     this.clicked.emit(); // Emit event when button is clicked
   }
 
-  value: string = '';
-  value2: string = '';
-  operator: string = '';
-  sum: number = 0;
-  showResult: boolean = false;
+calculatorState: CalculatorState = {
+  value: '',
+  value2: '',
+  operator: '',
+  sum: 0,
+  showResult: false
+}
 
   addition() {
-    this.operator = '+';
+    this.calculatorState.operator = '+';
   }
 
   subtraction() {
-    this.operator = '-';
+    this.calculatorState.operator = '-';
   }
 
   division() {
-    this.operator = '/';
+    this.calculatorState.operator = '/';
   }
 
   multiplication() {
-    this.operator = '*';
+    this.calculatorState.operator = '*';
   }
 
   updateValue(newValue: string) {
     if (
-      this.operator === '+' ||
-      this.operator === '-' ||
-      this.operator === '/' ||
-      this.operator === '*'
+      this.calculatorState.operator === '+' ||
+      this.calculatorState.operator === '-' ||
+      this.calculatorState.operator === '/' ||
+      this.calculatorState.operator === '*'
     ) {
-      this.value2 += newValue;
+      this.calculatorState.value2 += newValue;
     } else {
-      this.value += newValue;
+      this.calculatorState.value += newValue;
     }
   }
 
   operatorBrain() {
-    switch (this.operator) {
+    switch (this.calculatorState.operator) {
       case '+':
-        this.sum = Number(this.value) + Number(this.value2);
+        this.calculatorState.sum = Number(this.calculatorState.value) + Number(this.calculatorState.value2);
         break;
 
       case '-':
-        this.operator = '-';
-        this.sum = Number(this.value) - Number(this.value2);
+        this.calculatorState.operator = '-';
+        this.calculatorState.sum = Number(this.calculatorState.value) - Number(this.calculatorState.value2);
         break;
 
       case '/':
-        this.sum = Number(this.value) / Number(this.value2);
+        this.calculatorState.sum = Number(this.calculatorState.value) / Number(this.calculatorState.value2);
         break;
 
       case '*':
-        this.sum = Number(this.value) * Number(this.value2);
+        this.calculatorState.sum = Number(this.calculatorState.value) * Number(this.calculatorState.value2);
         break;
 
       default:
         break;
     }
-    this.showResult = true;
+    this.calculatorState.showResult = true;
   }
 
   clear(): boolean {
-    this.value = '';
-    this.value2 = '';
-    this.operator = '';
-    this.sum = 0;
-    return this.showResult = false;
+    this.calculatorState.value = '';
+    this.calculatorState.value2 = '';
+    this.calculatorState.operator = '';
+    this.calculatorState.sum = 0;
+    return this.calculatorState.showResult = false;
   }
 
   updateOperator(newOperator: string) {
-    this.operator = newOperator;
+    this.calculatorState.operator = newOperator;
   }
 }
