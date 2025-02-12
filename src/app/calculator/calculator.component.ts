@@ -75,12 +75,12 @@ export class CalculatorComponent {
     this.showResult = true;
   }
 
-  clear() {
+  clear(): boolean {
     this.value = '';
     this.value2 = '';
     this.operator = '';
     this.sum = 0;
-    this.showResult = false;
+    return this.showResult = false;
   }
 
   updateOperator(newOperator: string) {
