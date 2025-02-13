@@ -8,31 +8,29 @@
     </p>
     <div class="buttons">
       
-      <button class="orange" (click)="division()">/</button>
+      <button class="grey ac" (click)="clear()">AC</button>
+      <button class="orange division" (click)="division()">/</button>
       
-      <p></p>
-      <p></p>
-      <button class="grey" (click)="clear()">AC</button>
-      
-      <button class="orange" (click)="subtraction()">-</button>
 
       <button class="numbers" (click)="updateValue('7')">7</button>
       <button class="numbers" (click)="updateValue('8')">8</button>
       <button class="numbers" (click)="updateValue('9')">9</button>
-      <button class="orange" (click)="addition()">+</button>
+      <button class="orange" (click)="subtraction()">-</button>
+      
 
       <button class="numbers" (click)="updateValue('4')">4</button>
       <button class="numbers" (click)="updateValue('5')">5</button>
       <button class="numbers" (click)="updateValue('6')">6</button>
-      <button class="orange" (click)="multiplication()">x</button>
+      <button class="orange" (click)="addition()">+</button>
+      
 
       <button class="numbers" (click)="updateValue('1')">1</button>
       <button class="numbers" (click)="updateValue('2')">2</button>
       <button class="numbers" (click)="updateValue('3')">3</button>
-      <button class="orange" (click)="operatorBrain()">=</button>
+      <button class="orange" (click)="multiplication()">x</button>
       
-
       <button class="numbers zero" (click)="updateValue('0')">0</button>
+      <button class="orange" (click)="operatorBrain()">=</button>
     </div>
   </article>
 </section>

@@ -1,7 +1,6 @@
 body {
-    font-family: 'Noto Sans Mono', monospace;
-  }
-  
+  font-family: "Noto Sans Mono", monospace;
+}
 
 section {
   display: flex;
@@ -45,6 +44,8 @@ article {
 
 .buttons {
   display: grid;
+  justify-items: center;
+  align-items: center;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
@@ -67,7 +68,6 @@ article {
   background: #555;
 }
 
-/* Stil för operatorknappar */
 .orange {
   background: #ff9500;
   color: white;
@@ -87,7 +87,6 @@ article {
   background: #e58900;
 }
 
-/* AC-knapp */
 .grey {
   background: #888;
   color: white;
@@ -108,7 +107,12 @@ article {
 
 /* Anpassning för 0-knappen */
 .zero {
-  grid-column: span 2; /* Gör den bredare */
-  width: 110px;
+  grid-column: span 3; /* Gör den bredare */
+  width: 184px;
   border-radius: 25px;
+}
+
+.ac {
+  grid-column: span 3;
+  justify-self: start;
 }
