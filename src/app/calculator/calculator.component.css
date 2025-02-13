@@ -113,6 +113,9 @@ article {
 }
 
 .ac {
-  grid-column: span 3;
-  justify-self: start;
+  grid-column: 1/2;
+}
+
+.division {
+  grid-column: 4/5;
 }
